@@ -20,8 +20,6 @@ namespace Compiler
             {
                 var langCode = new NewLangCode(filePath);
 
-                MessageBox.Show(langCode.Code);
-
                 var errors = langCode.Compile(fileName);
 
                 if (string.IsNullOrWhiteSpace(errors))
