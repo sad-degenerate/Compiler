@@ -13,7 +13,16 @@ namespace Compiler
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            var filePath = @"D:\helloWorld.txt";
+            var filePath = string.Empty;
+
+            using (var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "txt Files (.txt)|*.txt";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    filePath = openFileDialog.FileName;
+            }
+
             var fileName = "test.exe";
 
             try
